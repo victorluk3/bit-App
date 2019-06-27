@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Hash</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="https://bootswatch.com/4/slate/bootstrap.min.css"> -->
+  <!-- <link rel="stylesheet" type="text/css" href="bt_v4-1-3.css"> -->
+  <link rel="stylesheet" href="./styles.css">
+
+  <!-- Scripts -->
+  <script>
+    delete module.exports
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="angular1_7_2.js"></script>
+  <script src="./window.js" charset="utf-8"></script>
+
+</head>
+
+<body ng-app="app" ng-controller="ctrl" ng-cloak>
+  <div id="container" class="container-fluid">
+    <div class="row" style="margin-top:10px;">
+      <div class="col-md-12">
+        <div class="col-md-1">
+          <button class="btn btn-default form-control" ng-click="start()">start</button>
+        </div>
+        <div class="col-md-1">
+          <button class="btn btn-default form-control" ng-click="stop()">stop</button>
+        </div>
+        <div class="col-md-3">
+          <input type="text" placeholder="description" ng-model="description" class="form-control">
+        </div>
+        <div class="col-md-2">
+          {{showTime()}}
+        </div>
+        <div class="col-md-2">
+          <button class="btn btn-default" ng-click="reset()">reset</button>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top:10px;">
+      <table width="100%">
+        <tr>
+          <td width="100px">start</td>
+          <td width="100px">stop</td>
+          <td>description</td>
+          <td>time</td>
+          <td>actions</td>
+        </tr>
+        <tr ng-repeat="item in data">
+          <td>{{item.start}}</td>
+          <td>{{item.stop}}</td>
+          <td>{{item.description}}</td>
+          <td>{{secondsToHms(item.time)}}</td>
+          <td> <button ng-click="delete($index)" >delete</button>  </td>
+        </tr>
+      </table>
+      total: {{total()}}
+    </div>
+
+  </div>
+
+</body>
+
+
+
+</html>

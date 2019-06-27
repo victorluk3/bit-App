@@ -1,0 +1,14 @@
+{
+  "name": "bitApp",
+  "version": "1.0.0",
+  "description": "this is bitacora app",
+  "main": "app.js",
+  "scripts": {
+    "start": "electron app.js"
+  },
+  "author": "victor sanchez",
+  "license": "ISC",
+    "devDependencies": {
+    "electron": "^1.4.12"
+  }
+}
